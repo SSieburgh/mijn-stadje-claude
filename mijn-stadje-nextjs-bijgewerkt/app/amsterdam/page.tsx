@@ -7,17 +7,6 @@ export const metadata: Metadata = {
   description: "Mijn Stadje Amsterdam: een prentenboek waarin Noah peuters meeneemt door de hoofdstad.",
 };
 
-const beats = [
-  ["B", "Duizend kleuren op het water", "Bloemenmarkt"],
-  ["F", "Tringeling, rakelings langs het water", "Fietsen langs de gracht"],
-  ["J", "Buurman zwaait, buurvrouw lacht", "De Jordaan"],
-  ["L", "Hij brult zo hard dat de bladeren trillen", "Artis"],
-  ["O", "Overal vlaggetjes, overal boten", "Koningsdag"],
-  ["R", "Het ruikt zoet in de negen straatjes", "9 straatjes"],
-  ["T", "Koude limonade op een warme dag", "Terrasje aan de gracht"],
-  ["Y", "Wind in zijn haar, meeuwen om hem heen", "Het IJ"],
-];
-
 const spreads = [
   { src: "/assets/boek-amsterdam-b-bloemenmarkt.webp", alt: "B is van Bloemenmarkt: Noah wijst naar de bloemenstalletjes langs de gracht, vol tulpen en zonnebloemen", caption: "B is van Bloemenmarkt" },
   { src: "/assets/boek-amsterdam-f-fietsen.webp", alt: "F is van Fietsen: Noah fietst langs de gracht, de ooievaar fietst op een blauw fietsje met hem mee", caption: "F is van Fietsen" },
@@ -73,21 +62,6 @@ export default function AmsterdamPage() {
               geen eigen kassa — ook Noah hoeft geen pincode te onthouden.
             </p>
           </div>
-        </section>
-
-        <section className="section story-route" aria-labelledby="route-title">
-          <div className="section-heading split-heading">
-            <div><p className="eyebrow">Acht letters uit de 26</p><h2 id="route-title">Van A tot Z door de stad</h2></div>
-            <p>Het boek telt 26 letterspreads, elk met een eigen plek in Amsterdam — hier alvast acht voorproefjes.</p>
-          </div>
-          <ol className="beat-grid">
-            {beats.map(([number, kicker, title]) => (
-              <li key={number}>
-                <span>{number}</span>
-                <div><small>{kicker}</small><h3>{title}</h3></div>
-              </li>
-            ))}
-          </ol>
         </section>
 
         <section className="section gallery-section" aria-labelledby="gallery-title">
