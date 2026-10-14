@@ -14,25 +14,15 @@ export const metadata: Metadata = {
   description: "Mijn Stadje Amsterdam: een prentenboek waarin Noah peuters meeneemt door de hoofdstad.",
 };
 
-const beats = [
-  ["B", "Duizend kleuren op het water", "Bloemenmarkt"],
-  ["F", "Tringeling, rakelings langs het water", "Fietsen langs de gracht"],
-  ["J", "Buurman zwaait, buurvrouw lacht", "De Jordaan"],
-  ["L", "Hij brult zo hard dat de bladeren trillen", "Artis"],
-  ["O", "Overal vlaggetjes, overal boten", "Koningsdag"],
-  ["R", "Het ruikt zoet in de negen straatjes", "9 straatjes"],
-  ["T", "Koude limonade op een warme dag", "Terrasje aan de gracht"],
-  ["Y", "Wind in zijn haar, meeuwen om hem heen", "Het IJ"],
-];
-
 const spreads = [
-  { src: "/assets/gallery-centraal.webp", alt: "Noah en de ooievaar tussen de geparkeerde fietsen bij Amsterdam Centraal", caption: "Aankomst bij Centraal" },
-  { src: "/assets/gallery-bike.webp", alt: "Noah fietst langs de gracht, de ooievaar op een fiets ernaast", caption: "Fietsen langs de gracht" },
-  { src: "/assets/hero-bridge.webp", alt: "Noah steekt een Amsterdamse gracht over via een stenen brug, met woonboten, tulpen en een overvliegende ooievaar", caption: "Over de brug naar huis" },
-  { src: "/assets/gallery-cafe.webp", alt: "Noah kijkt naar gebak in een etalage, de ooievaar leest de krant op het terras", caption: "Gebak kijken bij het buurttentje" },
-  { src: "/assets/gallery-fleamarket.webp", alt: "Noah bekijkt platen op de vlooienmarkt, de ooievaar past hoeden", caption: "Grasduinen op de vlooienmarkt" },
-  { src: "/assets/gallery-chinatown.webp", alt: "Noah loopt door een straat met lampionnen, de ooievaar eet onderweg iets lekkers", caption: "Dim sum happen onderweg" },
-  { src: "/assets/gallery-bedroom.webp", alt: "Noah wordt wakker terwijl de ooievaar met een baby over de gracht vliegt", caption: "Thuiskomen" },
+  { src: "/assets/boek-amsterdam-b-bloemenmarkt.webp", alt: "B is van Bloemenmarkt: Noah wijst naar de bloemenstalletjes langs de gracht, vol tulpen en zonnebloemen", caption: "B is van Bloemenmarkt" },
+  { src: "/assets/boek-amsterdam-f-fietsen.webp", alt: "F is van Fietsen: Noah fietst langs de gracht, de ooievaar fietst op een blauw fietsje met hem mee", caption: "F is van Fietsen" },
+  { src: "/assets/boek-amsterdam-j-jordaan.webp", alt: "J is van Jordaan: Noah zwaait naar de buren op de stoep van een Jordaanhuisje, de ooievaar kijkt mee vanaf het dak", caption: "J is van Jordaan" },
+  { src: "/assets/boek-amsterdam-l-leeuw.webp", alt: "L is van Leeuw: Noah staat in Artis bij het leeuwenverblijf, de ooievaar staat tussen de flamingo's", caption: "L is van Leeuw" },
+  { src: "/assets/boek-amsterdam-o-oranje.webp", alt: "O is van Oranje: Noah rent met een oranje vlaggetje langs de gracht op Koningsdag, vol boten en oranje feestgangers", caption: "O is van Oranje" },
+  { src: "/assets/boek-amsterdam-r-ruiken.webp", alt: "R is van Ruiken: Noah snuffelt bij een bakkerij in de 9 straatjes, de ooievaar leest de krant op het terras", caption: "R is van Ruiken" },
+  { src: "/assets/boek-amsterdam-t-terrasje.webp", alt: "T is van Terrasje: Noah en papa drinken koude limonade op een terras aan de gracht", caption: "T is van Terrasje" },
+  { src: "/assets/boek-amsterdam-y-ij.webp", alt: "Y is van het IJ: Noah zwaait vanaf de pont over het IJ naar de meeuwen, de ooievaar staat naast hem", caption: "Y is van het IJ" },
 ];
 
 export default function AmsterdamPage() {
@@ -42,12 +32,15 @@ export default function AmsterdamPage() {
         <CityHero image="/assets/amsterdam-header.webp" city="Amsterdam" status="Boek 1 · verhaal compleet" />
 
         <section className="section amsterdam-intro">
-          <div className="book-stage" aria-label="Conceptcover van Mijn Stadje Amsterdam">
+          <div className="book-stage" aria-label="Omslag van Mijn Stadje Amsterdam">
             <div className="book-shadow" />
             <div className="book-cover">
-              <span className="cover-label">conceptcover</span>
-              <img src="/assets/noah-hero.webp" alt="Noah op de conceptcover van Mijn Stadje Amsterdam" />
-              <div className="cover-footer"><span>Mijn Stadje Amsterdam</span><b>3 ×</b></div>
+              <img
+                src="/assets/omslag-amsterdam.webp"
+                alt="Omslag van Mijn Stadje Amsterdam: de ooievaar vliegt met een bundeltje boven de gracht en Noah zwaait vanaf de kade"
+                width="900"
+                height="1180"
+              />
             </div>
           </div>
 
@@ -60,14 +53,14 @@ export default function AmsterdamPage() {
               markt tot thuiskomen.
             </p>
             <p>
-              Het verhaal is gemaakt om samen te bekijken en steeds opnieuw te lezen. Voor baby’s
+              Het verhaal is gemaakt om samen te bekijken en steeds opnieuw te lezen. Voor baby's
               is er veel te zien; voor peuters valt er steeds meer te herkennen. En voor voorlezers
               zijn er genoeg details om bij de tiende keer nog iets nieuws te ontdekken.
             </p>
             <dl className="book-facts">
               <div><dt>Formaat</dt><dd>210 × 279 mm (staand)</dd></div>
               <div><dt>Uitvoering</dt><dd>Stevige hardcover</dd></div>
-              <div><dt>Leeftijd</dt><dd>0–3 jaar</dd></div>
+              <div><dt>Leeftijd</dt><dd>0–6 jaar</dd></div>
             </dl>
             <AmazonBuyButton city="Amsterdam" href={AMAZON_URL} />
             <p className="amazon-note">
@@ -78,27 +71,12 @@ export default function AmsterdamPage() {
           </div>
         </section>
 
-        <section className="section story-route" aria-labelledby="route-title">
-          <div className="section-heading split-heading">
-            <div><p className="eyebrow">Acht letters uit de 26</p><h2 id="route-title">Van A tot Z door de stad</h2></div>
-            <p>Het boek telt 26 letterspreads, elk met een eigen plek in Amsterdam — hier alvast acht voorproefjes.</p>
-          </div>
-          <ol className="beat-grid">
-            {beats.map(([number, kicker, title]) => (
-              <li key={number}>
-                <span>{number}</span>
-                <div><small>{kicker}</small><h3>{title}</h3></div>
-              </li>
-            ))}
-          </ol>
-        </section>
-
         <section className="section gallery-section" aria-labelledby="gallery-title">
           <div className="gallery-head-row">
             <div className="section-heading">
               <p className="eyebrow">Een kijkje in het boek</p>
-              <h2 id="gallery-title">Acht stadsmomenten, elk met zijn eigen sfeer</h2>
-              <p className="gallery-lead">Van de bakfiets bij Centraal tot de vlooienmarkt en het buurttentje — een paar spreads uit het Amsterdam-boek.</p>
+              <h2 id="gallery-title">Acht pagina's uit het boek</h2>
+              <p className="gallery-lead">Van de Bloemenmarkt tot het IJ: blader alvast door acht letters uit Mijn Stadje Amsterdam.</p>
             </div>
             <div className="stork-tip">
               <img src="/assets/stork-mascot.webp" alt="De ooievaar uit Mijn Stadje, met een zonnebril op de vlooienmarkt" />

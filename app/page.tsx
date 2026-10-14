@@ -9,7 +9,7 @@ const cities = [
     image: "/assets/amsterdam-header.webp",
     status: "Nu verkrijgbaar",
     available: true,
-    line: "Grachten, bakfietsen en thuiskomen.",
+    line: "Aan de Amsterdamse grachten.",
   },
   {
     name: "Utrecht",
@@ -33,7 +33,7 @@ const cities = [
     image: "/assets/den-haag-header.webp",
     status: "Binnenkort",
     available: false,
-    line: "Zee, stad en een tikje deftig.",
+    line: "Mooie stad achter de duinen.",
   },
 ];
 
@@ -76,7 +76,7 @@ export default function Home() {
                 </nav>
               </div>
             </div>
-            <div className="mobile-city-links" aria-label="Stadpagina’s">
+            <div className="mobile-city-links" aria-label="Stadpagina's">
               {cities.map((city) => (
                 <TrackedCityLink key={city.name} href={city.href} cityName={city.name}>
                   {city.name}
@@ -107,10 +107,10 @@ export default function Home() {
         <section className="section city-picker" aria-labelledby="city-picker-title">
           <div className="section-heading split-heading">
             <div>
-              <p className="eyebrow">Waar woont jouw verhaal?</p>
+              <p className="eyebrow">Waar begint jouw verhaal?</p>
               <h2 id="city-picker-title">Kies een stad</h2>
             </div>
-            <p>Vier boeken, vier karakters. Noah blijft gelukkig gewoon Noah.</p>
+            <p>Vier boeken, vier steden. Noah blijft gelukkig gewoon Noah.</p>
           </div>
           <div className="city-grid">
             {cities.map((city, index) => <CityCard key={city.name} city={city} index={index + 1} />)}
